@@ -25,9 +25,7 @@ namespace cbms.Pages.Users
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
-            {
                 return Page();
-            }
 
             _userRepository.Create(User);
             return RedirectToPage("/Index");

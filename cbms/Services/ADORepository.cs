@@ -11,5 +11,10 @@
         {
             _dbMethods.Create(entity);
         }
+
+        public List<T> ReadAll()
+        {
+            return _dbMethods.ReadAll();
+        }
     }
 }

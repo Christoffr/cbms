@@ -23,6 +23,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Projects/AllProjects">All Projects</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav">
                         @{
@@ -46,6 +49,9 @@
                             {
                                 <li class="nav-item nav-link text-dark me-3">
                                     <span>User:</span> <span><b>@Context.User.Identity?.Name</b></span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Projects/CreateProject">Create Project</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Users/CreateUser">Create User</a>

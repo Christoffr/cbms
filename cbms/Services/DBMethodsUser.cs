@@ -43,5 +43,10 @@ namespace cbms.Services
             command.Parameters.AddWithValue("@Role", entity.Role);
             command.Parameters.AddWithValue("@PasswordHash", hashedPassword);
         }
+
+        protected override User GetRow(SqlDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

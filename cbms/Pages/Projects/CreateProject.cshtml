@@ -1,0 +1,29 @@
+﻿@page
+@model cbms.Pages.Projects.CreateProjectModel
+@{
+    ViewData["Title"] = "Create New Project";
+}
+
+<h1>Create New Project</h1>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="@Model.Project.Title" class="control-lable"></label>
+        <input asp-for="@Model.Project.Title" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="@Model.Project.Tagline" class="control-lable"></label>
+        <input asp-for="@Model.Project.Tagline" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="@Model.Project.Text" class="control-lable"></label>
+        <textarea asp-for="@Model.Project.Text" class="form-control"></textarea>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="@Model.Project.Link" class="control-lable"></label>
+        <input asp-for="@Model.Project.Link" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <input type="submit" value="Create" class="btn btn-outline-primary" />
+    </div>
+</form>
