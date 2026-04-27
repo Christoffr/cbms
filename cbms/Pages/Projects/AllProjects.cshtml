@@ -1,0 +1,31 @@
+﻿@page
+@model cbms.Pages.Projects.AllProjectsModel
+@{
+}
+
+<h1 class="text-2xl font-bold mb-4">All Projects</h1>
+
+<div>
+    @if (Model.Projects != null && Model.Projects.Any())
+    {
+        <div class="d-grid">
+            @{
+                foreach (var project in Model.Projects)
+                {
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">@project.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@project.Tagline</h6>
+                            <p class="card-text">@project.Text</p>
+                            <a target="_blank" href="@project.Link" class="card-link">See More</a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <p>No projects found.</p>
+    }
+</div>

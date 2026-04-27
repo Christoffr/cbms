@@ -9,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IRepository<User>, UserRepository>();
+builder.Services.AddSingleton<IRepository<Project>, ProjectRepository>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
