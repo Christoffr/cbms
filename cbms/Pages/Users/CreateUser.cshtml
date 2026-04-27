@@ -1,0 +1,27 @@
+﻿@page
+@model cbms.Pages.Users.CreateUserModel
+@{
+    ViewData["Title"] = "Create User";
+
+    <h1 class="display-5 mb-3">Create New User</h1>
+
+    <form method="post">
+        <div class="form-group mb-3">
+            <label asp-for="@Model.User.Name" class="control-lable"></label>
+            <input asp-for="@Model.User.Name" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="@Model.User.Role" class="control-lable"></label>
+            <select asp-for="@Model.User.Role" asp-items="@Model.Roles"
+                    class="form-control">
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="@Model.User.Password" class="control-lable"></label>
+            <input asp-for="@Model.User.Password" class="form-control" type="password"/>
+        </div>
+        <div class="form-group mb-3">
+            <input type="submit" value="Create" class="btn btn-outline-primary" />
+        </div>
+    </form>
+}

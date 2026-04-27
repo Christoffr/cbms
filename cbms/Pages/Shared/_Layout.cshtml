@@ -23,9 +23,35 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        @{
+                            if (Context.User.Identity?.IsAuthenticated ?? false)
+                            {
+                                <li class="nav-item">
+                                    <form method="post" asp-area="" asp-page="/Users/Logout" id="logoutForm" class="form-inline">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login">Login</a>
+                                </li>
+                            }
+                        }
+                        @{
+                            if (Context.User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item nav-link text-dark me-3">
+                                    <span>User:</span> <span><b>@Context.User.Identity?.Name</b></span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Users/CreateUser">Create User</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>

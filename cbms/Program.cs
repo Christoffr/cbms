@@ -1,7 +1,20 @@
+using cbms.Models;
+using cbms.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IRepository<User>, UserRepository>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Users/Login";
+    });
 
 var app = builder.Build();
 
@@ -16,6 +29,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseAuthorization();
 
