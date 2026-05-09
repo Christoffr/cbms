@@ -1,0 +1,8 @@
+@startuml
+class "ADORepository`1"<T> {
+    + ADORepository(dbMethods:DBMethods<T>)
+    + Create(entity:T) : void
+    + ReadAll() : List<T>
+}
+"IRepository`1" "<T>" <|-- "ADORepository`1"
+@enduml

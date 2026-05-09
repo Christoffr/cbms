@@ -1,0 +1,8 @@
+@startuml
+class UserRepository {
+    + UserRepository(configuration:IConfiguration)
+    + VerifyUser(name:string, password:string) : User?
+}
+"ADORepository`1" "<User>" <|-- UserRepository
+IUserRepository <|-- UserRepository
+@enduml

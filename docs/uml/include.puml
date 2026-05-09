@@ -1,0 +1,24 @@
+@startuml
+!include ./cbms/Program.puml
+!include ./cbms/Services/IUserRepository.puml
+!include ./cbms/Services/DBMethodsProject.puml
+!include ./cbms/Services/DBMethods.puml
+!include ./cbms/Services/DBMethodsUser.puml
+!include ./cbms/Services/ProjectRepository.puml
+!include ./cbms/Services/IRepository.puml
+!include ./cbms/Services/ADORepository.puml
+!include ./cbms/Services/UserRepository.puml
+!include ./cbms/Pages/Privacy.cshtml.puml
+!include ./cbms/Pages/Index.cshtml.puml
+!include ./cbms/Pages/Error.cshtml.puml
+!include ./cbms/Models/User.puml
+!include ./cbms/Models/Project.puml
+!include ./cbms/Pages/Projects/CreateProject.cshtml.puml
+!include ./cbms/Pages/Projects/AllProjects.cshtml.puml
+!include ./cbms/Pages/Users/Login.cshtml.puml
+!include ./cbms/Pages/Users/CreateUser.cshtml.puml
+!include ./cbms/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.puml
+!include ./cbms/obj/Debug/net9.0/cbms.RazorAssemblyInfo.puml
+!include ./cbms/obj/Debug/net9.0/cbms.GlobalUsings.g.puml
+!include ./cbms/obj/Debug/net9.0/cbms.AssemblyInfo.puml
+@enduml

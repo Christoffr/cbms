@@ -1,0 +1,5 @@
+@startuml
+interface IUserRepository {
+}
+"IRepository`1" "<User>" <|-- IUserRepository
+@enduml

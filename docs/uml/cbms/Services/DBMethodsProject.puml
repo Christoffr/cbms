@@ -1,0 +1,6 @@
+@startuml
+class DBMethodsProject {
+    + DBMethodsProject(configuration:IConfiguration)
+}
+"DBMethods`1" "<Project>" <|-- DBMethodsProject
+@enduml

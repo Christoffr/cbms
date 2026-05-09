@@ -1,0 +1,7 @@
+@startuml
+class PrivacyModel {
+    + PrivacyModel(logger:ILogger<PrivacyModel>)
+    + OnGet() : void
+}
+PageModel <|-- PrivacyModel
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class CreateProjectModel {
+    + Project : Project <<get>> <<set>>
+    + CreateProjectModel(projectRepository:IRepository<Project>)
+    + OnPost() : IActionResult
+}
+PageModel <|-- CreateProjectModel
+@enduml

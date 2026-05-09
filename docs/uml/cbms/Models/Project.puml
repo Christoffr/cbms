@@ -1,0 +1,11 @@
+@startuml
+class Project {
+    + Id : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + Tagline : string <<get>> <<set>>
+    + Text : string <<get>> <<set>>
+    + Link : string <<get>> <<set>>
+    + Project()
+    + Project(title:string, tagline:string, text:string, link:string)
+}
+@enduml

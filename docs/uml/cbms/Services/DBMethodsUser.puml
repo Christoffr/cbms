@@ -1,0 +1,7 @@
+@startuml
+class DBMethodsUser {
+    + DBMethodsUser(configuration:IConfiguration)
+    + VerifyUser(name:string, password:string) : User?
+}
+"DBMethods`1" "<User>" <|-- DBMethodsUser
+@enduml

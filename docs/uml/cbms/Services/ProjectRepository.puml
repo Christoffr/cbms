@@ -1,0 +1,7 @@
+@startuml
+class ProjectRepository {
+    + ProjectRepository(configuration:IConfiguration)
+}
+"ADORepository`1" "<Project>" <|-- ProjectRepository
+"IRepository`1" "<Project>" <|-- ProjectRepository
+@enduml

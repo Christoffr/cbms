@@ -1,0 +1,8 @@
+@startuml
+class AllProjectsModel {
+    + Projects : List<Project> <<get>> <<set>>
+    + AllProjectsModel(projectRepository:IRepository<Project>)
+    + OnGet() : void
+}
+PageModel <|-- AllProjectsModel
+@enduml

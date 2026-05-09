@@ -1,0 +1,10 @@
+@startuml
+class LoginModel {
+    + Name : string <<get>> <<set>>
+    + Password : string <<get>> <<set>>
+    + ErrorMessage : string <<get>> <<set>>
+    + LoginModel(userRepository:IUserRepository)
+    + <<async>> OnPost() : Task<IActionResult>
+}
+PageModel <|-- LoginModel
+@enduml

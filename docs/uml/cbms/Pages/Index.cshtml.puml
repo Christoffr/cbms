@@ -1,0 +1,7 @@
+@startuml
+class IndexModel {
+    + IndexModel(logger:ILogger<IndexModel>)
+    + OnGet() : void
+}
+PageModel <|-- IndexModel
+@enduml

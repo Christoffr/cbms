@@ -1,0 +1,7 @@
+@startuml
+abstract class "DBMethods`1"<T> {
+    + DBMethods(configuration:IConfiguration, tableName:string, parameterList:string)
+    + Create(entity:T) : void
+    + ReadAll() : List<T>
+}
+@enduml

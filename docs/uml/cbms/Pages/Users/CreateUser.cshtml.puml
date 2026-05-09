@@ -1,0 +1,9 @@
+@startuml
+class CreateUserModel {
+    + User : User <<get>> <<set>>
+    + Roles : SelectList <<get>> <<set>>
+    + CreateUserModel(userRepository:IRepository<User>)
+    + OnPost() : IActionResult
+}
+PageModel <|-- CreateUserModel
+@enduml
