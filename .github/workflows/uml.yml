@@ -1,0 +1,54 @@
+name: Generate UML Diagrams
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  uml:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: "9.0.x"
+
+    - name: Build solution
+      run: dotnet build
+
+    - name: Install UML generator tool
+      run: dotnet tool install -g PlantUmlClassDiagramGenerator
+
+    - name: Generate PlantUML
+      run: |
+        export PATH="$PATH:$HOME/.dotnet/tools"
+        mkdir -p docs/uml
+        puml-gen ./ ./docs/uml -dir -public
+
+    - name: Render PlantUML to PNG (no Java)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl
+
+        for file in $(find docs/uml -name "*.puml"); do
+          echo "Rendering $file"
+          curl -s -X POST \
+            -H "Content-Type: text/plain" \
+            --data-binary @"$file" \
+            https://www.plantuml.com/plantuml/png/ \
+            -o "${file%.puml}.png"
+        done
+
+    - name: Commit UML diagrams
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+
+        git add docs/uml
+
+        git commit -m "Auto UML update" || echo "No changes"
+        git push
